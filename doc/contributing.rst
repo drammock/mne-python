@@ -35,6 +35,11 @@ Setting up your local environment for MNE-Python development
 Configuring git
 ^^^^^^^^^^^^^^^
 
+.. sidebar:: Git GUI alternative
+
+    `GitHub desktop`_ is a GUI alternative to command line git that some users
+    appreciate; it is available for |windows| Windows and |apple| MacOS.
+
 To get set up for contributing, make sure you have git installed on your local
 computer:
 
@@ -51,10 +56,6 @@ computer:
   functionality to git Bash, but has not been widely tested by MNE-Python
   developers yet.
 
-.. note::
-
-    `GitHub desktop`_ is a GUI alternative to command line git that some users
-    appreciate; it is available for Windows and MacOS.
 
 Once git is installed, the only absolutely necessary configuration step is
 identifying yourself and your contact info:
@@ -85,13 +86,6 @@ and create a `fork`_ into your GitHub user account.
 Setting up the Python environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-
-    We strongly recommend the `Anaconda`_ or `Miniconda`_ environment managers
-    for Python. Other setups are possible but are not officially supported by
-    the MNE-Python development team; see discussion :ref:`here
-    <other-py-distros>`.
-
 The first step is to `clone`_ the MNE-Python repository from your fork, and
 also connect the local copy to the ``upstream`` version of the codebase, so you
 can stay up-to-date with changes from other contributors. First, edit these two
@@ -118,17 +112,22 @@ Finally, set up a link between your local clone and the official repository
     $ git remote add upstream git://github.com/mne-tools/mne-python.git
     $ git fetch --all
 
-.. note::
+Here we use ``git://`` instead of ``https://`` in the address for the official
+"upstream" remote repository. ``git://`` addresses are read-only, which
+means you can *pull* the official repository into your local copy (in order
+to stay up-to-date with changes made by other contributors) but you cannot
+*push* anything from your computer directly into the upstream remote.
+Instead, you must push your changes to your own remote fork first, and then
+create a pull request from your remote into the upstream remote (and even
+then, your changes are not automatically accepted into the upstream; the
+changes must be *approved* by maintainers and then *merged* into upstream).
 
-    We use ``git://`` instead of ``https://`` in the address for the official
-    "upstream" remote repository. ``git://`` addresses are read-only, which
-    means you can *pull* the official repository into your local copy (in order
-    to stay up-to-date with changes made by other contributors) but you cannot
-    *push* anything from your computer directly into the upstream remote.
-    Instead, you must push your changes to your own remote fork first, and then
-    create a pull request from your remote into the upstream remote (and even
-    then, your changes are not automatically accepted into the upstream; the
-    changes must be *approved* by maintainers and then *merged* into upstream).
+.. sidebar:: Python environments
+
+    We strongly recommend the `Anaconda`_ or `Miniconda`_ environment managers
+    for Python. Other setups are possible but are not officially supported by
+    the MNE-Python development team; see discussion :ref:`here
+    <other-py-distros>`.
 
 Next, use the `environment file`_ provided in the root of the MNE-Python
 repository to set up your local development environment. This will install all
@@ -141,16 +140,6 @@ create the conda environment:
     $ conda env create -n $PREFERRED_ENVIRONMENT_NAME -f environment.yml
     $ conda activate $PREFERRED_ENVIRONMENT_NAME
 
-.. note::
-
-    When using the environment file to install with Anaconda or Miniconda, the
-    name of the environment (``mne``) is built into the environment file
-    itself, but can be changed on the command line with the ``-n`` flag (as
-    shown above). This is helpful when maintaining separate environments for
-    stable and development versions of MNE-Python, or when using the
-    environment file as a starting point for new projects. See ``conda env
-    create --help`` for more info.
-
 The environment file installs the *stable* version of MNE-Python, so next we'll
 remove that and replace it with the *development* version (the clone we just
 created):
@@ -161,15 +150,12 @@ created):
     $ pip uninstall -y mne               # or: conda remove --force mne
     $ pip install -e .                   # or: python setup.py develop
 
-.. note::
-
-    The commands ``pip install -e .`` and ``python setup.py develop`` both
-    install a python module into the current environment by creating a link to
-    the source code directory (instead of copying the code to pip's
-    ``site_packages`` directory, which is what normally happens). This means
-    that any edits you make to the MNE-Python source code will be reflected the
-    next time you open a Python interpreter and ``import mne`` (the ``-e`` flag
-    of ``pip`` stands for an "editable" installation).
+The command ``pip install -e .`` installs a python module into the current
+environment by creating a link to the source code directory (instead of
+copying the code to pip's ``site_packages`` directory, which is what normally
+happens). This means that any edits you make to the MNE-Python source code will
+be reflected the next time you open a Python interpreter and ``import mne``
+(the ``-e`` flag of ``pip`` stands for an "editable" installation).
 
 Finally, we'll add a few dependencies that are not needed for running
 MNE-Python, but are needed for locally running our test suite or building our
@@ -196,19 +182,6 @@ documentation:
     $ yarn add mermaid
     $ yarn add mermaid.cli
     $ pip install sphinxcontrib-mermaid
-
-.. note::
-
-    Occasionally, a bug emerges in one of the MNE-Python dependencies, and it
-    temporarily becomes necessary to use the current master version of that
-    dependency (until a new stable release is made that contains the bugfix).
-    In such cases, you can do a one-time update of that dependency to its
-    current master using pip + git (as shown for MNE-Python in
-    :ref:`installing_master`). If you anticipate needing to update a dependency
-    frequently, you can install the dependency in the same way you've just
-    installed MNE-Python (i.e., cloning its repository and installing with
-    ``pip install -e .`` from within the cloned repo), and then updating it
-    periodically with ``git pull``.
 
 
 .. _basic-git:
@@ -248,7 +221,7 @@ feature, you should first synchronize your local ``master`` branch with the
     $ git merge upstream/master      # synchronize local master branch with upstream master branch
     $ git checkout -b new-feature-x  # create branch "new-feature-x" and check it out
 
-.. note::
+.. sidebar:: Alternative
 
     You can save some typing by using ``git pull upstream/master`` to replace
     the ``fetch`` and ``merge`` lines above.
@@ -433,7 +406,7 @@ example that reports which lines within ``mne.viz`` are missed when running
 
     $ pytest --cov=mne.viz --cov-report=term-missing mne/viz/tests/test_evoked.py mne/viz/tests/test_topo.py
 
-You can also use ``pytest --durations=20`` to ensure new or modified tests will
+You can also use ``pytest --durations=5`` to ensure new or modified tests will
 not slow down the test suite too much.
 
 
