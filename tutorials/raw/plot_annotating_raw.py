@@ -3,18 +3,30 @@
 Annotating continuous data
 ==========================
 
+MNE-Python stores short strings of information about temporal occurrences or
+time spans of a :class:`~mne.io.Raw` object in :class:`~mne.Annotations`,
+a :class:`list-like <list>` object where each :term:`Annotation <Annotations>`
+is composed by three pieces of information:
+an ``onset`` time with respect to ``orig_time`` (in seconds),
+a ``duration`` (also in seconds),
+and a ``description`` (a text string).
+
 This tutorial describes adding annotations to a Raw object, and how annotations
 are used in later stages of data processing.
+
 
 .. contents:: Page contents
    :local:
    :depth: 1
 
-As usual we'll start by importing the modules we need, loading some example
-data, and cropping it to save memory:
+We'll begin by loading the Python modules we need, loading the same
+:ref:`example data <sample-dataset>` we used in the :doc:`introductory tutorial
+<plot_introduction>`:
 """
 
 import os
+import numpy as np
+
 import mne
 
 sample_data_folder = mne.datasets.sample.data_path()
@@ -23,13 +35,6 @@ sample_data_raw_file = os.path.join(sample_data_folder, 'MEG', 'sample',
 raw = mne.io.read_raw_fif(sample_data_raw_file, verbose=False)
 
 ###############################################################################
-# :class:`~mne.Annotations` in MNE-Python are a way of storing short strings of
-# information about temporal spans of a :class:`~mne.io.Raw` object. Below the
-# surface, each annotation in an :class:`~mne.Annotations` object is just three
-# pieces of information: an ``onset`` time (in seconds), a ``duration`` (also
-# in seconds), and a ``description`` (a text string).
-#
-#
 # Creating annotations programmatically
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #
@@ -38,25 +43,30 @@ raw = mne.io.read_raw_fif(sample_data_raw_file, verbose=False)
 # you can even pass lists or arrays to the :class:`~mne.Annotations`
 # constructor to annotate multiple spans at once:
 
-my_annot = mne.Annotations(onset=[3, 5, 7], duration=[1, 0.5, 0.25],
-                           description=['AAA', 'BBB', 'CCC'])
+my_annot = mne.Annotations(onset=[3, 5, 7],
+                           duration=[1, 0.5, 0.25],
+                           description=['AAA', 'BBB', 'CCC'],
+                           orig_time=None,  # orig_time is None by default
+                           )
 print(my_annot)
 
 ###############################################################################
-# When you print an :class:`~mne.Annotations` object, you'll notice it has a
-# property called ``orig_time``; this gives the time relative to which the
-# annotation ``onset`` values are determined. In the example above
-# ``orig_time`` is ``None`` (meaning we didn't set it).
-#
 # Once created, the annotations can be added to a :class:`~mne.io.Raw` object
 # with the :meth:`~mne.io.Raw.set_annotations` method, and then accessed
-# through the :attr:`~mne.io.Raw.annotations` attribute:
+# through the :attr:`~mne.io.Raw.annotations` attribute.
+#
+# When setting the annotations in a :class:`~mne.io.Raw` object, the
+# ``orig_time`` of the :class:`~mne.Annotations` and ``raw.info['meas_info']``
+# get aligned, and the :attr:`~mne.io.Raw.annotations` is updated accordingly.
+# If ``orig_time`` is ``None``, as in this case, is assumed to be
+# ``raw.first_samp``. (See :attr:`~mne.io.Raw.annotations` for details.)
+#
 
 raw.set_annotations(my_annot)
 print(raw.annotations)
 
 ###############################################################################
-# Notice that now the ``orig_time`` has been updated to match the measurement
+# Notice how the ``orig_time`` has been updated to match the measurement
 # date of the :class:`~mne.io.Raw` object (``raw.info['meas_date']``):
 # ``2002-12-03 19:01:10.720100``. Below, you can also see that the annotation
 # onsets have been adjusted to take ``raw.first_samp`` into account:
@@ -67,6 +77,14 @@ print(raw.annotations)
 print(my_annot.onset)
 print(raw.annotations.onset)
 print(my_annot.onset + raw.first_samp / raw.info['sfreq'])
+
+# in the same manner
+raw.set_annotations(mne.Annotations(onset=np.array([3, 5, 7]) + 1,
+                                    duration=[1, 0.5, 0.25],
+                                    description=['AAA', 'BBB', 'CCC'],
+                                    orig_time='2002-12-03 19:01:09.720100',
+                                    ))
+print(raw.annotations.onset)
 
 ###############################################################################
 # If that's not what you want, you can set ``orig_time`` before you add the
@@ -103,8 +121,8 @@ raw.plot(start=2, duration=6)
 # browse through the data to find and examine them.
 #
 #
-# Annotating :class:`~mne.io.Raw` objects interactively
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# Interactively annotate :class:`~mne.io.Raw` objects
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #
 # Annotations can also be added to a :class:`~mne.io.Raw` object interactively
 # by clicking-and-dragging the mouse in the plot window. To do this, you must
