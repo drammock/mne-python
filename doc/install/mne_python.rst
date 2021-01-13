@@ -5,10 +5,6 @@
 Installing MNE-Python
 =====================
 
-.. contents:: Page contents
-   :local:
-   :depth: 1
-
 .. highlight:: console
 
 .. _install-python:
@@ -328,9 +324,6 @@ Python development are:
   closed-source.
 
 .. highlight:: python
-
-**Next:** :doc:`freesurfer`
-
 
 .. LINKS
 

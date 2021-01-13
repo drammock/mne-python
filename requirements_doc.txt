@@ -1,9 +1,9 @@
 sphinx
 numpydoc
 sphinx_fontawesome
-https://github.com/larsoner/sphinx-bootstrap-theme/archive/language_data.zip
+pydata_sphinx_theme
 sphinx-gallery
-sphinxcontrib-bibtex==2.0.0
+sphinxcontrib-bibtex>=2.120
 memory_profiler
 neo
 seaborn

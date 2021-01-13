@@ -1,13 +1,7 @@
-:orphan:
-
 .. _contributing:
 
 Contributing to MNE-Python
 ==========================
-
-.. contents:: Page contents
-   :local:
-   :depth: 3
 
 .. highlight:: console
 

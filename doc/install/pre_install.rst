@@ -3,10 +3,6 @@
 Before you install
 ==================
 
-.. contents::
-   :local:
-   :depth: 1
-
 Overview of the MNE tools suite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -87,9 +83,6 @@ Getting help
 
 Help with installation is available through the `MNE Forum`_. See the
 :ref:`help` page for more information.
-
-
-**Next:** :doc:`mne_python`
 
 
 .. LINKS:

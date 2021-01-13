@@ -6,9 +6,6 @@
 Frequently Asked Questions (FAQ)
 ================================
 
-.. contents:: Page contents
-   :local:
-
 .. highlight:: python
 
 General MNE-Python issues

@@ -5,10 +5,6 @@
 Advanced setup of MNE-Python
 ============================
 
-.. contents::
-   :local:
-   :depth: 2
-
 Using MNE-Python with IPython / Jupyter notebooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

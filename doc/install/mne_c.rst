@@ -5,10 +5,6 @@
 Installing MNE-C
 ================
 
-.. contents::
-   :local:
-   :depth: 1
-
 System requirements
 ^^^^^^^^^^^^^^^^^^^
 
