@@ -3,7 +3,7 @@ numpydoc
 sphinx_fontawesome
 pydata_sphinx_theme
 sphinx-gallery
-sphinxcontrib-bibtex>=2.120
+sphinxcontrib-bibtex>=2.1.2
 memory_profiler
 neo
 seaborn
