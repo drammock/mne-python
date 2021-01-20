@@ -46,13 +46,13 @@ categories above) are linked here:
 - :ref:`migrating`
 - :ref:`design_philosophy`
 - :ref:`implementation`
-- :ref:`datasets_index`
+- :ref:`datasets`
 - :ref:`python_commands`
 - :ref:`cookbook`
 - :ref:`cite`
 - :ref:`roadmap`
 - :ref:`whats_new`
-- :ref:`general bibliography`
+- :ref:`general_bibliography`
 
 Documentation for the related C and MATLAB tools are available here:
 
