@@ -3,6 +3,11 @@
 Before you install
 ==================
 
+MNE-Python is an open-source Python module for processing, analysis, and
+visualization of functional neuroimaging data (EEG, MEG, sEEG, ECoG, and
+fNIRS). This page describes several related or interoperable software packages
+that you may also want to install, depending on your analysis needs.
+
 Overview of the MNE tools suite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10,7 +15,8 @@ Overview of the MNE tools suite
   providing a set of interrelated command-line and GUI programs focused on
   computing cortically constrained Minimum Norm Estimates from MEG and EEG
   data. These tools were written in C by Matti Hämäläinen, and are
-  documented `here <MNE-C manual_>`_.
+  documented `here <MNE-C manual_>`_. See :ref:`install_mne_c` for installation
+  instructions.
 
 - :doc:`MNE-Python <../python_reference>` reimplements the functionality of
   MNE-C, and extends considerably the analysis and visualization capabilities.

@@ -44,7 +44,7 @@ conda to ``/home/user/anaconda3``)::
     $ which pip
     /home/user/anaconda3/bin/pip
 
-.. collapse:: |hand-stop-o| If you get an error or these look incorrect...
+.. collapse:: |hand-paper| If you get an error or these look incorrect...
     :class: danger
 
     .. rubric:: If you are on a |windows| Windows command prompt:
@@ -147,7 +147,7 @@ your operating system.
        $ curl --remote-name https://raw.githubusercontent.com/mne-tools/mne-python/master/environment.yml
        $ conda env update --file environment.yml
 
-   .. collapse:: |hand-stop-o| If you get errors building mayavi...
+   .. collapse:: |hand-paper| If you get errors building mayavi...
        :class: danger
 
        Installing `mayavi`_ needs OpenGL support. On debian-like systems this
@@ -249,7 +249,7 @@ MNE-Python and its dependencies. Typical output looks like this::
     PyQt5:         5.14.1
 
 
-.. collapse:: |hand-stop-o| If you get an error...
+.. collapse:: |hand-paper| If you get an error...
     :class: danger
 
     .. rubric:: If you see an error like:

@@ -1,7 +1,7 @@
 .. _contributing:
 
-Contributing to MNE-Python
-==========================
+Contributing guide
+==================
 
 .. highlight:: console
 
@@ -65,8 +65,8 @@ The sections :ref:`basic-git` and :ref:`github-workflow` (below) describe this
 process in more detail.
 
 
-Setting up your local environment for MNE-Python development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting up your local development environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configuring git
 ~~~~~~~~~~~~~~~
@@ -178,8 +178,8 @@ of how that structure is set up is given here:
    :align: left
 
 
-Setting up the development environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating the virtual environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. sidebar:: Supported Python environments
 

@@ -2,11 +2,11 @@
 
 .. _advanced_setup:
 
-Advanced setup of MNE-Python
-============================
+Advanced setup
+==============
 
-Using MNE-Python with IPython / Jupyter notebooks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using with IPython / Jupyter notebooks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using MNE-Python within IPython or a Jupyter notebook, we strongly
 recommend using the Qt matplotlib backend for fast and correct rendering. On
@@ -74,13 +74,13 @@ the notebook 3d backend:
 
 
 The notebook 3d backend requires PyVista to be installed along with other packages,
-please follow :doc:`mne_python`
+please follow :doc:`mne_python`.
 
 
 .. _installing_master:
 
-Using the development version of MNE-Python (latest master)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using the development version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want access to the latest features and bugfixes, you can easily switch
 from the stable version of MNE-Python to the current development version.
@@ -103,8 +103,8 @@ pip to make frequent updates, check out the :ref:`contributing guide
 
 .. _other-py-distros:
 
-Using MNE-Python with other Python distributions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Other Python distributions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While the `Anaconda`_ Python distribution provides many conveniences, other
 distributions of Python should also work with MNE-Python.  In particular,
@@ -114,7 +114,7 @@ installing new packages and managing environments; unlike Anaconda, Miniconda
 starts off with a minimal set of around 30 packages instead of Anaconda's
 hundreds. See the `installation instructions for Miniconda`_ for more info.
 
-It is also possible to use a system-level installation of Python (version 3.5
+It is also possible to use a system-level installation of Python (version 3.6
 or higher) and use ``pip`` to install MNE-Python and its dependencies, using
 the provided `requirements file`_:
 
@@ -129,8 +129,8 @@ installation choices.
 
 .. _CUDA:
 
-Using MNE-Python with CUDA (NVIDIA GPU acceleration)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CUDA (NVIDIA GPU acceleration)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some operations in MNE-Python can utilize `NVIDIA CUDA GPU processing`_ to
 speed up some operations (e.g. FIR filtering) by roughly an order of magnitude.
@@ -160,8 +160,8 @@ that state that they allow passing ``n_jobs='cuda'``, such as
 and they should run faster than the CPU-based multithreading such as
 ``n_jobs=8``.
 
-Off-screen rendering in MNE-Python on Linux with MESA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Off-screen rendering on Linux with MESA
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On remote systems, it might be possible to use MESA software rendering
 (such as ``llvmpipe`` or ``swr``) for 3D visualization (with some tweaks).
@@ -226,8 +226,8 @@ and it should show the right version of MESA::
 
 .. _troubleshoot_3d:
 
-Troubleshooting 3D plots in MNE-Python
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Troubleshooting 3D plots
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D plotting trouble after version 0.20 upgrade on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

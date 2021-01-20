@@ -44,7 +44,7 @@ sys.path.append(os.path.abspath(os.path.join(curdir, 'sphinxext')))
 
 project = 'MNE'
 td = date.today()
-copyright = f'2012-{td.year}, MNE Developers. Last updated on {td.isoformat()}'
+copyright = f'2012–{td.year}, MNE Developers. Last updated on {td.isoformat()}'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -76,7 +76,6 @@ extensions = [
     'sphinx.ext.graphviz',
     'numpydoc',
     'sphinx_gallery.gen_gallery',
-    'sphinx_fontawesome',
     'gen_commands',
     'gh_substitutions',
     'mne_substitutions',
@@ -458,12 +457,11 @@ html_theme_options = {
     'navigation_with_keys': False,
     'show_toc_level': 2,
     'google_analytics_id': 'UA-37225609-1',
-    # 'navbar_align': 'left',  # supposed to be supported but doesn't work
 }
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "_static/mne_logo_small.svg"
+html_logo = "_static/mne_logo_small_gray.svg"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -477,7 +475,6 @@ html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_css_files = [
     'style.css',
-    'font-awesome.css',
     'font-source-sans-pro.css',
     'font-source-code-pro.css',
 ]
@@ -494,8 +491,7 @@ html_extra_path = [
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-    'index': ['sidebar-whats-new.html',
-              'sidebar-funders.html']
+    'index': []  # 'sidebar-whats-new.html', 'sidebar-funders.html'
 }
 
 # If true, links to the reST sources are added to the pages.
@@ -507,7 +503,22 @@ html_show_sphinx = False
 
 # variables to pass to HTML templating engine
 html_context = {
-    'build_dev_html': bool(int(os.environ.get('BUILD_DEV_HTML', False)))
+    'build_dev_html': bool(int(os.environ.get('BUILD_DEV_HTML', False))),
+    'versions_dropdown': {
+        'dev': 'v0.23 (development)',
+        'stable': 'v0.22 (stable)',
+        '0.21': 'v0.21',
+        '0.20': 'v0.20',
+        '0.19': 'v0.19',
+        '0.18': 'v0.18',
+        '0.17': 'v0.17',
+        '0.16': 'v0.16',
+        '0.15': 'v0.15',
+        '0.14': 'v0.14',
+        '0.13': 'v0.13',
+        '0.12': 'v0.12',
+        '0.11': 'v0.11',
+    }
 }
 
 # Output file base name for HTML help builder.
@@ -601,6 +612,31 @@ def reset_warnings(gallery_conf, fname):
 reset_warnings(None, None)
 
 
+# -- Fontawesome support -----------------------------------------------------
+
+# here the "b" and "s" refer to "brand" and "solid" (determines which font file
+# to look in)
+icons = {
+    'apple': 'b',
+    'linux': 'b',
+    'windows': 'b',
+    'book': 's',
+    'code-branch': 's',
+    'hand-paper': 's',
+    'newspaper': 's',
+    'question-circle': 's',
+    'quote-left': 's',
+    'rocket': 's',
+    'server': 's',
+}
+
+prolog = '\n'.join([
+    f'''.. |{icon}| raw:: html
+
+    <i class="fa{cls} fa-{icon}"></i>
+''' for icon, cls in icons.items()])
+
+
 # -- Connect sphinx-gallery to the main Sphinx app ---------------------------
 
 def setup(app):
@@ -608,4 +644,5 @@ def setup(app):
     app.connect('autodoc-process-docstring', append_attr_meth_examples)
     if report_scraper is not None:
         report_scraper.app = app
+        app.config.rst_prolog = prolog
         app.connect('build-finished', report_scraper.copyfiles)

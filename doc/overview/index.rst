@@ -42,21 +42,17 @@ See our :doc:`get_help` page for guidance on where to get help.
 The rest of the MNE-Python documentation pages (parts outside of the four
 categories above) are linked here:
 
-.. toctree::
-    :maxdepth: 1
-
-    faq
-    migrating
-    design_philosophy
-    implementation
-    datasets_index
-    ../generated/commands
-    cookbook
-    cite
-    roadmap
-    ../install/contributing
-    ../whats_new
-    ../bibliography
+- :ref:`faq`
+- :ref:`migrating`
+- :ref:`design_philosophy`
+- :ref:`implementation`
+- :ref:`datasets_index`
+- :ref:`python_commands`
+- :ref:`cookbook`
+- :ref:`cite`
+- :ref:`roadmap`
+- :ref:`whats_new`
+- :ref:`general bibliography`
 
 Documentation for the related C and MATLAB tools are available here:
 
