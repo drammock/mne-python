@@ -615,27 +615,30 @@ reset_warnings(None, None)
 # -- Fontawesome support -----------------------------------------------------
 
 # here the "b" and "s" refer to "brand" and "solid" (determines which font file
-# to look in)
+# to look in). "fw-" prefix indicates fixed width.
 icons = {
     'apple': 'b',
     'linux': 'b',
     'windows': 'b',
-    'book': 's',
-    'code-branch': 's',
     'hand-paper': 's',
-    'newspaper': 's',
     'question': 's',
-    'question-circle': 's',
-    'quote-left': 's',
     'rocket': 's',
     'server': 's',
+    'fw-book': 's',
+    'fw-code-branch': 's',
+    'fw-newspaper': 's',
+    'fw-question-circle': 's',
+    'fw-quote-left': 's',
 }
 
-prolog = '\n'.join([
-    f'''.. |{icon}| raw:: html
+prolog = ''
+for icon, cls in icons.items():
+    fw = ' fa-fw' if icon.startswith('fw-') else ''
+    prolog += f'''
+.. |{icon}| raw:: html
 
-    <i class="fa{cls} fa-{icon}"></i>
-''' for icon, cls in icons.items()])
+    <i class="fa{cls} fa-{icon[3:] if fw else icon}{fw}"></i>
+'''
 
 
 # -- Connect sphinx-gallery to the main Sphinx app ---------------------------

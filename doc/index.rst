@@ -41,6 +41,11 @@ Version |version|
 
 .. rst-class:: list-group list-group-flush version-box
 
+- |fw-newspaper| :ref:`Changelog <whats_new>`
+- |fw-book| :ref:`Documentation <documentation_overview>`
+- |fw-question-circle| :ref:`Get help <help>`
+- |fw-quote-left| :ref:`Cite <cite>`
+- |fw-code-branch| :ref:`Contribute <contributing>`
 
 .. raw:: html
 
