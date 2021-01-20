@@ -624,6 +624,7 @@ icons = {
     'code-branch': 's',
     'hand-paper': 's',
     'newspaper': 's',
+    'question': 's',
     'question-circle': 's',
     'quote-left': 's',
     'rocket': 's',
