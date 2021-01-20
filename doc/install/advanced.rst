@@ -90,7 +90,7 @@ from the stable version of MNE-Python to the current development version.
 
 For a one-time update to latest master, make sure you're in the conda
 environment where MNE-Python is installed (if you followed the default install
-instructions, this will be ``base``), and use ``pip`` to upgrade:
+instructions, this will be ``mne``), and use ``pip`` to upgrade:
 
 .. code-block:: console
 
@@ -98,8 +98,8 @@ instructions, this will be ``base``), and use ``pip`` to upgrade:
    $ pip install --upgrade --no-deps https://github.com/mne-tools/mne-python/archive/master.zip
 
 If you plan to contribute to MNE-Python, or just prefer to use git rather than
-pip to make frequent updates, check out the :ref:`contributing guide
-<contributing>`.
+pip to make frequent updates, there are instructions for installing from a
+``git clone`` in the :ref:`contributing`.
 
 .. _other-py-distros:
 
@@ -129,13 +129,13 @@ installation choices.
 
 .. _CUDA:
 
-CUDA (NVIDIA GPU acceleration)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+GPU acceleration with CUDA
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some operations in MNE-Python can utilize `NVIDIA CUDA GPU processing`_ to
-speed up some operations (e.g. FIR filtering) by roughly an order of magnitude.
-To use CUDA, first  ensure that you are running the `NVIDIA proprietary
-drivers`_ on your operating system, and then do:
+MNE-Python can utilize `NVIDIA CUDA GPU processing`_ to speed up some
+operations (e.g. FIR filtering) by roughly an order of magnitude. To use CUDA,
+first  ensure that you are running the `NVIDIA proprietary drivers`_ on your
+operating system, and then do:
 
 .. code-block:: console
 
@@ -160,10 +160,10 @@ that state that they allow passing ``n_jobs='cuda'``, such as
 and they should run faster than the CPU-based multithreading such as
 ``n_jobs=8``.
 
-Off-screen rendering on Linux with MESA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Off-screen rendering with MESA
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On remote systems, it might be possible to use MESA software rendering
+On remote Linux systems, it might be possible to use MESA software rendering
 (such as ``llvmpipe`` or ``swr``) for 3D visualization (with some tweaks).
 For example, on CentOS 7.5 you might be able to use an environment variable
 to force MESA to use modern OpenGL by using this before executing
@@ -229,10 +229,10 @@ and it should show the right version of MESA::
 Troubleshooting 3D plots
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-3D plotting trouble after version 0.20 upgrade on macOS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3D plotting trouble after upgrade on macOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When upgrading MNE-Python to version 0.20, some macOS users may end up with
+When upgrading MNE-Python from version 0.19 or lower, some macOS users may end up with
 conflicting versions of some of the 3D plotting dependencies. If you plot using
 the pyvista 3D backend and find that you can click-drag to rotate the brain,
 but cannot adjust any of the settings sliders, it is likely that your versions
@@ -249,8 +249,8 @@ If you installed VTK using ``pip`` rather than ``conda``, substitute the first
 line for ``pip uninstall -y vtk``.
 
 
-3D plotting trouble using mayavi 3D backend
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Trouble using mayavi backend
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you run into trouble when visualizing source estimates (or anything else)
 using mayavi, you can try setting a couple of environment variables at the

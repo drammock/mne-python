@@ -1,15 +1,15 @@
 .. include:: ../links.inc
 
-Before you install
-==================
+Overview of the MNE tools suite
+===============================
 
 MNE-Python is an open-source Python module for processing, analysis, and
 visualization of functional neuroimaging data (EEG, MEG, sEEG, ECoG, and
-fNIRS). This page describes several related or interoperable software packages
-that you may also want to install, depending on your analysis needs.
+fNIRS). There are several related or interoperable software packages that you
+may also want to install, depending on your analysis needs.
 
-Overview of the MNE tools suite
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Related software
+^^^^^^^^^^^^^^^^
 
 - MNE-C was the initial stage of this project,
   providing a set of interrelated command-line and GUI programs focused on
@@ -18,17 +18,17 @@ Overview of the MNE tools suite
   documented `here <MNE-C manual_>`_. See :ref:`install_mne_c` for installation
   instructions.
 
-- :doc:`MNE-Python <../python_reference>` reimplements the functionality of
+- :ref:`MNE-Python <python_reference>` reimplements the functionality of
   MNE-C, and extends considerably the analysis and visualization capabilities.
   MNE-Python is collaboratively developed and has more than 200 contributors.
 
-- The :ref:`mne_matlab` provides a MATLAB interface to the .fif file
+- :ref:`MNE MATLAB <mne_matlab>` provides a MATLAB interface to the .fif file
   format and other MNE data structures, and provides example MATLAB
   implementations of some of the core analysis functionality of MNE-C. It is
   distributed alongside MNE-C, and can also be downloaded from the `MNE-MATLAB
   git repository`_.
 
-- :doc:`MNE-CPP <../mne_cpp>` provides core MNE functionality implemented in
+- :ref:`MNE-CPP <mne_cpp>` provides core MNE functionality implemented in
   C++ and is primarily intended for embedded and real-time applications.
 
 There is also a growing ecosystem of other Python packages that work alongside

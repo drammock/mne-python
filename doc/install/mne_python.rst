@@ -118,8 +118,8 @@ Installing MNE-Python and its dependencies
 Once you have Python/Anaconda installed, you have a few choices for how to
 install MNE-Python.
 
-For sensor-level analysis
-~~~~~~~~~~~~~~~~~~~~~~~~~
+2D plotting and sensor-level analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you only need 2D plotting capabilities with MNE-Python (i.e., most EEG/ERP
 or other sensor-level analyses), you can install all you need by running
@@ -129,8 +129,8 @@ GUI). This will install MNE-Python into the "base" conda environment, which
 should be active by default and should already have the necessary dependencies
 (``numpy``, ``scipy``, and ``matplotlib``).
 
-For 3D plotting and source analysis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3D plotting and source analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you need MNE-Python's 3D plotting capabilities (e.g., plotting estimated
 source activity on a cortical surface) it is a good idea to install
@@ -215,8 +215,8 @@ Installing to a headless server
     need administrator privileges to install it.
 
 
-Testing MNE-Python installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing your installation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To make sure MNE-Python installed itself and its dependencies correctly,
 type the following command in a terminal::
@@ -276,8 +276,8 @@ If not, the `MNE Forum`_ is a good resources for troubleshooting installation
 problems.
 
 
-Installing a Python IDE
-^^^^^^^^^^^^^^^^^^^^^^^
+Python IDEs
+^^^^^^^^^^^
 
 Most users find it convenient to write and run their code in an `Integrated
 Development Environment`_ (IDE). Some popular choices for scientific

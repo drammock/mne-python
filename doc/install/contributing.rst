@@ -132,8 +132,7 @@ into a terminal and you should see ::
 
 If you don't see this or something similar:
 
-.. sidebar::
-   If you get:
+.. sidebar:: If you get:
 
    *bash: conda: command not found*
 

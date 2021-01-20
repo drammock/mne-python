@@ -19,15 +19,15 @@ For users already familiar with Python:
   .. code-block:: console
 
       $ curl --remote-name https://raw.githubusercontent.com/mne-tools/mne-python/master/environment.yml
-       $ conda env update --file environment.yml
+      $ conda env update --file environment.yml
 
 The :ref:`install_python_and_mne_python` page has more detailed instructions
 for different operating systems (including instructions for installing Python
-if you don't already have it), the :ref:`advanced_setup` page has additional
-tips and tricks for special situations (servers, notebooks, CUDA, running the
-development version, etc), and the :ref:`contributing guide <contributing>` has
-additional installation instructions for (future) contributors to MNE-Python
-(extra dependencies, etc).
+if you don't already have it). The :ref:`advanced_setup` page has additional
+tips and tricks for special situations (servers, notebooks, CUDA, installing
+the development version, etc). The :ref:`contributing` has additional
+installation instructions for (future) contributors to MNE-Python (extra
+dependencies, etc).
 
 .. toctree::
     :hidden:
