@@ -13,6 +13,7 @@
 }
 #devbar a {
     font-weight: bold;
+    color: var(--color-danger);
 }
 
 /* ******************************************** Pandas DataFrame _repr_html_ */
@@ -63,8 +64,8 @@ div[id^="examples-using-"] h2 {
 
 /* ******************************************* in-text sidebar callout boxes */
 div.sidebar {
-    background-color: var(--color-content-sidebar);
-    border: 1px solid var(--color-content-sidebar);
+    background-color: var(--color-info);
+    border: 1px solid var(--color-info);
     border-radius: 4px;
 }
 
@@ -75,27 +76,27 @@ img.logo {
 }
 
 /* ************************************** homepage version box & funders box */
+h5.card-header {
+    font-weight: bold;
+    margin-top: 0px;
+}
+h5.card-header::before {
+    height: 0px;
+    margin-top: 0px;
+}
+h5.card-header > p {
+    margin-bottom: 0px;
+}
 ul.funders, ul.version-box {
-    padding-left: 0;
-    padding-right: 28px;
     list-style: none;
 }
-ul.funders li, ul.version-box li {
-    padding-left: 28px;
-    margin-top: 0px;
-    margin-bottom: 8px;
-    min-height: 24px;
+ul.funders li {
+    margin-left: 30px;
+    text-indent: -30px;
+    padding-bottom: 6px;
 }
-ul.version-box li i,
 ul.funders li img {
-    float: left;
-    vertical-align: top;
-    position: relative;
-    left: -28px;
-    top: 0px;
     width: 24px;
-    margin: 0px -24px 0px 0px;
-    clear: both;
 }
 
 /* ********************************************* institution logos in footer */

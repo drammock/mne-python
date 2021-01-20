@@ -30,22 +30,16 @@ analyzing human neurophysiological data: MEG, EEG, sEEG, ECoG, NIRS, and more.
 
 .. raw:: html
 
-  <div class="sidebar-message">
-    <h4 class="sidebar-header">
+  <div class="card mt-4">
+    <h5 class="card-header">
 
 Version |version|
 
 .. raw:: html
 
-  </h4>
+      </h5>
 
-.. rst-class:: version-box
-
-- |newspaper| :ref:`Changelog <whats_new>`
-- |book| :ref:`Documentation <documentation_overview>`
-- |question-circle| :ref:`Get help <help>`
-- |quote-left| :ref:`Cite <cite>`
-- |code-branch| :ref:`Contribute <contributing>`
+.. rst-class:: list-group list-group-flush version-box
 
 
 .. raw:: html
@@ -56,10 +50,10 @@ Version |version|
 
 .. raw:: html
 
-  <div class="sidebar-message">
-    <h4 class="sidebar-header">Direct financial support</h4>
+  <div class="card mt-4">
+    <h5 class="card-header">Direct financial support</h5>
 
-.. rst-class:: funders
+.. rst-class:: list-group list-group-flush funders
 
 - |nih| **National Institutes of Health:**
   **R01**-EB009048, EB009048, EB006385, HD40712, NS44319, NS37462, NS104585,
