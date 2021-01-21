@@ -58,3 +58,12 @@ Documentation for the related C and MATLAB tools are available here:
 
 - :ref:`MNE-MATLAB <mne_matlab>` (HTML)
 - `MNE-C <MNE-C manual_>`_ (PDF)
+
+
+.. toctree::
+   :hidden:
+
+   Tutorials<../auto_tutorials/index>
+   Examples<../auto_examples/index>
+   ../glossary
+   API<../python_reference>
