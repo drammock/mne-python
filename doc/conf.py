@@ -491,7 +491,8 @@ html_extra_path = [
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-    'index': []
+    '**': ['sidebar-dev-version.html', 'sidebar-nav-bs.html'],
+    'index': ['sidebar-dev-version.html'],
 }
 
 # If true, links to the reST sources are added to the pages.

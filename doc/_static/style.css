@@ -8,10 +8,7 @@
 }
 
 /* ***************************** devbar (alert for development version docs) */
-#devbar {
-    text-align: center;
-}
-#devbar a {
+.devbox a {
     font-weight: bold;
     color: var(--color-danger);
 }

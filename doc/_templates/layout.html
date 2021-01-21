@@ -16,16 +16,6 @@
 {{ super() }}
 {% endblock %}
 
-{% block relbar1 %}
-{% if build_dev_html|tobool %}
-<div id="devbar" class="d-block alert alert-danger">
-This is documentation for the <em>unstable development version</em> of MNE-Python,
-<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
-Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
-</div>
-{% endif %}
-{% endblock %}
-
 {%- block footer %}
 <footer class="footer mt-5 mt-md-0">
     <div class="container"><div class="row">
