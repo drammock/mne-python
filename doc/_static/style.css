@@ -55,8 +55,8 @@ div[id^="examples-using-"] h2 {
 
 /* ******************************************* in-text sidebar callout boxes */
 div.sidebar {
-    background-color: var(--color-info);
-    border: 1px solid var(--color-info);
+    background-color: rgba(23, 162, 184, 0.1);  /* transparent version of --info color */
+    border: 1px solid var(--info);
     border-radius: 4px;
 }
 
