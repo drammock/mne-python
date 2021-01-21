@@ -13,36 +13,30 @@
     color: var(--color-danger);
 }
 
-/* ******************************************** Pandas DataFrame _repr_html_ */
-/*
-table.dataframe th,
-td {
-    padding: 5px;
-}
-*/
+/* ********************************************************** Sphinx-gallery */
 
-/* ************************************** Sphinx-gallery backreference links */
+/* backreference links */
 a.sphx-glr-backref-instance:hover {
-    /* restore hover decoration that SG removes */
-    text-decoration: underline;
+    text-decoration: underline;  /* restore hover decoration that SG removes */
 }
 a[class^="sphx-glr-backref-module"] {
-    /* make non-MNE instances look like regular code */
-    color: var(--text-color);
-}
-a[class^="sphx-glr-backref-module"]:hover {
-    color: var(--color-link);
+    color: var(--color-text-base);  /* make non-MNE instances resemble regular code */
 }
 a[class^="sphx-glr-backref-module-mne"] {
-    /* make all MNE things bold */
-    font-weight: 600;
+    font-weight: 600;  /* make all MNE things bold */
     color: var(--color-link);
 }
-a[class^="sphx-glr-backref-module-mne"]:hover {
-    color: var(--color-link-light);
+
+/* suppress redundant note at top of every tutorial and signature at the end */
+div.sphx-glr-download-link-note,
+p.sphx-glr-signature {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/* ***************************************** Sphinx-gallery Report embedding */
+/* Report embedding */
 iframe.sg_report {
     width: 95%;
     height: 70vh;
