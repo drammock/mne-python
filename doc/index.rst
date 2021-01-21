@@ -37,7 +37,8 @@ Version |version|
 
 .. raw:: html
 
-      </h5>
+    </h5>
+    <div class="card-body">
 
 .. rst-class:: list-group list-group-flush version-box
 
@@ -49,6 +50,7 @@ Version |version|
 
 .. raw:: html
 
+    </div>
   </div>
 
 .. SIDEBAR (FUNDERS)
@@ -57,6 +59,7 @@ Version |version|
 
   <div class="card mt-4">
     <h5 class="card-header">Direct financial support</h5>
+    <div class="card-body">
 
 .. rst-class:: list-group list-group-flush funders
 
@@ -79,6 +82,7 @@ Version |version|
 
 .. raw:: html
 
+    </div>
   </div>
 
 .. |nih| image:: _static/funding/nih.png
