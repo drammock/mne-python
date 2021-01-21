@@ -34,7 +34,6 @@ dependencies, etc).
 
     pre_install
     mne_python
+    freesurfer
     advanced
     contributing
-    freesurfer
-    mne_c

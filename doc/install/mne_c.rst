@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../links.inc
 
 .. _install_mne_c:
