@@ -18,9 +18,10 @@ Related software
   documented `here <MNE-C manual_>`_. See :ref:`install_mne_c` for installation
   instructions.
 
-- :ref:`MNE-Python <python_reference>` reimplements the functionality of
-  MNE-C, and extends considerably the analysis and visualization capabilities.
-  MNE-Python is collaboratively developed and has more than 200 contributors.
+- MNE-Python reimplements the functionality of MNE-C, extends considerably the
+  analysis and visualization capabilities, and adds support for additional data
+  types like functional near-infrared spectroscopy (fNIRS). MNE-Python is
+  collaboratively developed and has more than 200 contributors.
 
 - :ref:`MNE MATLAB <mne_matlab>` provides a MATLAB interface to the .fif file
   format and other MNE data structures, and provides example MATLAB

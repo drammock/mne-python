@@ -291,9 +291,10 @@ Python development are:
   instead, launch Spyder from the ``base`` environment and set it to use the
   ``mne`` environment automatically, by opening Spyder and navigating to
   :samp:`Tools > Preferences > Python Interpreter > Use the following interpreter`.
-  There, paste the output of the following terminal command::
+  There, paste the output of the following terminal commands::
 
-      $ conda activate mne && python -c "import sys; print(sys.executable)"
+      $ conda activate mne
+      $ python -c "import sys; print(sys.executable)"
 
   It should be something like ``C:\Users\user\anaconda3\envs\mne\python.exe``
   (Windows) or ``/Users/user/opt/anaconda3/envs/mne/bin/python`` (macOS).
