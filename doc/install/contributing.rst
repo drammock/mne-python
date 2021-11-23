@@ -828,22 +828,18 @@ to both visualization functions and tutorials/examples.
 Running the test suite
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Running the full test suite is as simple as running ::
-
-    $ make test
-
 .. sidebar:: pytest flags
 
-    The ``-x`` flag exits the pytest run as soon as the first test fails; this
-    can save some time if you are running an entire file's or module's worth of
-    tests instead of selecting just a single test as shown here.
+    The ``-x`` flag exits the pytest run when any test fails; this can speed
+    up debugging when running all tests in a file or module. 
 
     The ``--pdb`` flag will automatically start the python debugger upon test
     failure.
 
-from the ``mne-python`` root folder. Testing the entire module can be quite
+The full test suite can be run by calling ``make test`` from the
+``mne-python`` root folder. Testing the entire module can be quite
 slow, however, so to run individual tests while working on a new feature, you
-can run, e.g.::
+can run the following line::
 
     $ pytest mne/tests/test_evoked.py::test_io_evoked --verbose
 
