@@ -66,7 +66,7 @@ Overview of contribution process
 Changes to MNE-Python are typically made by `forking`_ the MNE-Python
 repository, making changes to your fork (usually by `cloning`_ it to your
 personal computer, making the changes locally, and then `pushing`_ the local
-changes up to your fork), and finally creating a `pull request`_ to incorporate
+changes up to your fork on GitHub), and finally creating a `pull request`_ to incorporate
 your changes back into the shared "upstream" version of the codebase.
 
 In general you'll be working with three different copies of the MNE-Python
