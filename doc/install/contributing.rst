@@ -357,7 +357,7 @@ related changes that are grouped together based on common goals (so that it's
 easier for their colleagues to understand and review the changes). For example,
 you might want to group all the code changes together in one commit, put new
 unit tests in another commit, and changes to the documentation in a third
-commit.  Git makes this easy(ish) with something called the `stage`_ (or
+commit.  Git makes this possible with something called the `stage`_ (or
 *staging area*). After you've made some changes to the codebase, you'll have
 what git calls "unstaged changes", which will show up with the `status`_
 command::
@@ -594,7 +594,7 @@ almost every PR).
 
 Lastly, make sure that your name is included in the list of authors in
 :file:`doc/changes/names.inc`, otherwise the documentation build will fail.
-To add an author name, simply append a line with the following pattern (note
+To add an author name, append a line with the following pattern (note
 how the syntax is different from that used in the changelog):
 
 .. code-block:: rst
@@ -618,7 +618,7 @@ where ``0000`` must be replaced with the respective GitHub pull request (PR)
 number. Mind the Oxford comma in the case of multiple contributors.
 
 Sometimes, changes that shall appear as a single changelog entry are spread out
-across multiple PRs. In this case, simply name all relevant PRs, separated by
+across multiple PRs. In this case, name all relevant PRs, separated by
 commas:
 
 .. code-block:: rst
