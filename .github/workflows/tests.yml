@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - uses: psf/black@stable
@@ -89,7 +89,7 @@ jobs:
           pyvista: false
         if: matrix.kind != 'notebook'
       # Python (if pip)
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
         if: startswith(matrix.kind, 'pip')
