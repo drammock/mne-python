@@ -5,6 +5,7 @@ import tomllib
 from packaging.requirements import Requirement
 from packaging.version import Version
 
+# not sure how to set the path so that the CI knows where to look for that file
 with open(Path("C:/Users/Carina/mne-python/pyproject.toml"), "rb") as fid:
     toml = tomllib.load(fid)
 
