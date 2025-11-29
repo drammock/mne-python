@@ -1,0 +1,25 @@
+codespell
+decorator
+ipython!=8.7.0
+jinja2
+lazy_loader==0.3
+matplotlib==3.8.0
+mypy
+numpy==1.26.0
+numpydoc
+packaging
+pooch==1.5.0
+pre-commit
+pytest-cov
+pytest-qt
+pytest-rerunfailures
+pytest-timeout
+pytest==8.0.0
+ruff
+scipy==1.11.1
+toml-sort
+tomli; python_version < "3.11"
+tqdm
+twine
+vulture
+wheel
