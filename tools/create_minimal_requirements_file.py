@@ -6,7 +6,7 @@ from packaging.requirements import Requirement
 from packaging.version import Version
 
 # not sure how to set the path so that the CI knows where to look for that file
-with open(Path("C:/Users/Carina/mne-python/pyproject.toml"), "rb") as fid:
+with open(Path("pyproject.toml"), "rb") as fid:
     toml = tomllib.load(fid)
 
 deps = toml["project"]["dependencies"] + toml["dependency-groups"]["test"]
@@ -35,7 +35,7 @@ for req in pinned_reqs:
     # could be a placeholder
     if not data["releases"]:
         print(f"{pkg}: no releases on PyPI")
-        break
+        continue
 
     # unlikely (all releases are yanked?)
     if not any(
@@ -44,8 +44,7 @@ for req in pinned_reqs:
         for file in files
     ):
         print(f"{pkg}: all versions are yanked on PyPI")
-        break
-
+        continue
     # if package exists and has versions that are not yanked
     valid_versions = []
     for v, info in data["releases"].items():
@@ -59,7 +58,7 @@ for req in pinned_reqs:
 
     if not valid_versions:
         print(f"Warning: no non-yanked versions satisfy {pkg}{specset}")
-        break
+        continue
 
     # get the minimum version
     min_version = min(valid_versions)
@@ -72,5 +71,5 @@ for req in pinned_reqs:
 # recombine pinned and not-pinned and sort
 all_reqs = sorted(minimal_pinned_reqs + unpinned_reqs, key=str)
 
-outfile = Path("C:/Users/Carina/mne-python/tools/requirements-ci-old.txt")
+outfile = Path("tools/requirements-ci-old.txt")
 outfile.write_text("\n".join([str(req) for req in all_reqs]))
