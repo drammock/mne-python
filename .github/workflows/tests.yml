@@ -123,6 +123,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
         if: startswith(matrix.kind, 'pip')
+        # install uv for old environment
+      - name: Install uv
+        if: matrix.kind == 'old'
+        uses: astral-sh/setup-uv@v1
       # Python (if conda)
       - name: Fixes for conda
         run: |
@@ -151,11 +155,8 @@ jobs:
           create-args: >-
             python=${{ env.PYTHON_VERSION }}
             -v
-        if: ${{ !startswith(matrix.kind, 'pip') }}
-        # TODO this ↑↑↑ will include matrix.kind == 'old' but we no longer want it to
+        # excluded old from conda setup
         timeout-minutes: 20
-      # TODO add a step here to install uv or pixi using their provided action
-      #      it should only happen for matrix.kind == 'old'
       - run: bash ./tools/github_actions_dependencies.sh
       # Minimal commands on Linux (macOS stalls)
       - run: bash ./tools/get_minimal_commands.sh
